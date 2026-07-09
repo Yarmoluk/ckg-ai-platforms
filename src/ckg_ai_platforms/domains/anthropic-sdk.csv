@@ -1,0 +1,45 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Anthropic SDK,,Platform
+2,Anthropic Client,1,Core
+3,AsyncAnthropic Client,1,Core
+4,Messages API,2,Core
+5,system message,4,Message
+6,user message,4,Message
+7,assistant message,4,Message
+8,content block,4,Message
+9,tool_use block,8,Tool
+10,tool_result block,9,Tool
+11,tool definition,4,Tool
+12,input_schema,11,Tool
+13,computer_use tool,9,Tool
+14,bash_tool,9,Tool
+15,text_editor_tool,9,Tool
+16,tool_choice,11,Tool
+17,Extended Thinking,4,Reasoning
+18,thinking block,17,Reasoning
+19,budget_tokens,17,Reasoning
+20,redacted_thinking,17,Reasoning
+21,Prompt Caching,4,Efficiency
+22,cache_control ephemeral,21,Efficiency
+23,cache_control persistent,21,Efficiency
+24,cache_read_input_tokens,21,Efficiency
+25,Streaming,4,Streaming
+26,stream context manager,25,Streaming
+27,on_message handler,25,Streaming
+28,on_content_block_delta,25,Streaming
+29,Message Batches API,1,Batching
+30,batch request,29,Batching
+31,batch result,29,Batching
+32,Files API,1,Files
+33,file upload,32,Files
+34,file reference,33,Files
+35,Token Counting,4,Efficiency
+36,count_tokens,35,Efficiency
+37,claude-opus-4,1,Model
+38,claude-sonnet-5,1,Model
+39,claude-haiku-4-5,1,Model
+40,MCPServerStdio,1,MCP
+41,MCPServerSSE,40,MCP
+42,RateLimitError,2,ErrorHandling
+43,APIStatusError,42,ErrorHandling
+44,retry with backoff,42,ErrorHandling

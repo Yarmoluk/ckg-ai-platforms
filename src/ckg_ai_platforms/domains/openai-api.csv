@@ -1,0 +1,44 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,OpenAI API,,Platform
+2,Chat Completions API,1,Core
+3,system role,2,Message
+4,user role,2,Message
+5,assistant role,2,Message
+6,content array,2,Message
+7,function calling,2,Tool
+8,tool_choice,7,Tool
+9,parallel_tool_calls,7,Tool
+10,tool definition JSON,7,Tool
+11,Structured Outputs,2,Output
+12,response_format,11,Output
+13,JSON schema strict,11|12,Output
+14,Assistants API,1,Assistant
+15,Assistant object,14,Assistant
+16,Thread,14,Assistant
+17,Run,14|15|16,Assistant
+18,Message object,16,Assistant
+19,File object,14,Assistant
+20,Code Interpreter,14,Assistant
+21,File Search,14,Assistant
+22,Embeddings API,1,Embedding
+23,text-embedding-3-small,22,Embedding
+24,text-embedding-3-large,22,Embedding
+25,Fine-tuning API,1,Training
+26,fine_tuning.job,25,Training
+27,training_file JSONL,25,Training
+28,validation_file,25,Training
+29,Moderation API,1,Safety
+30,moderation category,29,Safety
+31,moderation score,29,Safety
+32,Images API,1,Multimodal
+33,DALL-E 3,32,Multimodal
+34,image generation,32,Multimodal
+35,image editing,32,Multimodal
+36,Audio API,1,Multimodal
+37,Whisper ASR,36,Multimodal
+38,TTS,36,Multimodal
+39,Batch API,1,Efficiency
+40,batch job,39,Efficiency
+41,Streaming,2,Efficiency
+42,GPT-4o,1,Model
+43,o3 reasoning model,1,Model

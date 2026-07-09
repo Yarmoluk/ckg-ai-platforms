@@ -1,0 +1,43 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,LangGraph Framework,,Platform
+2,StateGraph,1,Core
+3,CompiledGraph,2,Core
+4,Node,2,Core
+5,Edge,2,Core
+6,Conditional Edge,5,Core
+7,AgentState,2,State
+8,TypedDict,7,State
+9,Annotated Reducer,7|8,State
+10,MessagesState,7,State
+11,START,2,Control
+12,END,2,Control
+13,Branch,6|2,Control
+14,Router Node,4|13,Control
+15,MemorySaver,2,Persistence
+16,SqliteSaver,15,Persistence
+17,PostgresSaver,15,Persistence
+18,AsyncSqliteSaver,15,Persistence
+19,Checkpointer,15,Persistence
+20,thread_id,19,Persistence
+21,interrupt,2,HumanInLoop
+22,Command,21,HumanInLoop
+23,HumanMessage,21,HumanInLoop
+24,approve/reject pattern,21|22,HumanInLoop
+25,stream,3,Streaming
+26,astream,25,Streaming
+27,stream_events,25,Streaming
+28,stream_mode,25,Streaming
+29,create_react_agent,1,Prebuilt
+30,ToolNode,4|29,Prebuilt
+31,tools_condition,6|29,Prebuilt
+32,Supervisor Agent,4,MultiAgent
+33,Worker Agent,4|32,MultiAgent
+34,Handoff,5|32,MultiAgent
+35,Subgraph,2|3,MultiAgent
+36,add_node subgraph,35|2,MultiAgent
+37,LangSmith Trace,3,Observability
+38,LangSmith Evaluate,37,Observability
+39,LangSmith Dataset,38,Observability
+40,recursion_limit,3,Config
+41,config_schema,3,Config
+42,RunnableConfig,41,Config

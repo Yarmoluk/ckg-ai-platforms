@@ -1,0 +1,47 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,AWS Bedrock,,Platform
+2,Model Access,1,Foundation
+3,Anthropic Claude,2,Foundation
+4,Amazon Titan,2,Foundation
+5,Meta Llama,2,Foundation
+6,Mistral AI,2,Foundation
+7,Cohere Command,2,Foundation
+8,Stability AI,2,Foundation
+9,InvokeModel API,1,Inference
+10,Converse API,9,Inference
+11,InvokeModelWithResponseStream,9,Inference
+12,ConverseStream,10|11,Inference
+13,Titan Embeddings,4,Embedding
+14,Cohere Embed,7,Embedding
+15,Knowledge Base,1,RAG
+16,Vector Store,15,RAG
+17,OpenSearch Serverless,16,RAG
+18,Aurora PostgreSQL,16,RAG
+19,Pinecone,16,RAG
+20,RetrieveAndGenerate API,15,RAG
+21,Bedrock Agent,1,Agent
+22,Action Group,21,Agent
+23,Lambda Function,22,Agent
+24,Agent Alias,21,Agent
+25,Orchestration Strategy,21,Agent
+26,Return of Control,21|22,Agent
+27,Guardrail,1,Safety
+28,Content Filter,27,Safety
+29,Topic Filter,27,Safety
+30,PII Redaction,27,Safety
+31,Grounding Check,27,Safety
+32,Word Filter,27,Safety
+33,Fine-tuning Job,1,Training
+34,Training Data S3,33,Training
+35,Continued Pre-training,33,Training
+36,Model Customization,33|35,Training
+37,Model Evaluation,1,Evaluation
+38,LLM-as-Judge,37,Evaluation
+39,Human Evaluation,37,Evaluation
+40,Prompt Management,1,Prompt
+41,Prompt Version,40,Prompt
+42,Prompt Flow,40,Prompt
+43,VPC Endpoint,1,Security
+44,KMS Encryption,1,Security
+45,IAM Role,1,Security
+46,CloudTrail Logging,1,Security

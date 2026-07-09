@@ -1,0 +1,37 @@
+{
+  "langchain": {
+    "nodes": 48,
+    "edges": 71,
+    "description": "LangChain ecosystem \u2014 chains, agents, memory, retrieval, LCEL, tools, and LangSmith"
+  },
+  "langgraph": {
+    "nodes": 42,
+    "edges": 58,
+    "description": "LangGraph agent framework \u2014 stateful graphs, persistence, human-in-the-loop, multi-agent"
+  },
+  "aws-bedrock": {
+    "nodes": 46,
+    "edges": 67,
+    "description": "AWS Bedrock enterprise AI \u2014 foundation models, agents, knowledge bases, guardrails, fine-tuning"
+  },
+  "anthropic-sdk": {
+    "nodes": 44,
+    "edges": 62,
+    "description": "Anthropic Claude API and SDK \u2014 messages, tools, extended thinking, prompt caching, MCP, batching"
+  },
+  "huggingface": {
+    "nodes": 46,
+    "edges": 65,
+    "description": "HuggingFace ecosystem \u2014 Hub, Transformers, PEFT/LoRA, TRL, Inference, Datasets, Gradio"
+  },
+  "openai-api": {
+    "nodes": 43,
+    "edges": 59,
+    "description": "OpenAI API ecosystem \u2014 chat completions, tools, structured outputs, assistants, fine-tuning, batch"
+  },
+  "vertex-ai": {
+    "nodes": 45,
+    "edges": 63,
+    "description": "Google Vertex AI \u2014 Gemini, generative AI, Agent Builder, Vector Search, pipelines, MLOps"
+  }
+}

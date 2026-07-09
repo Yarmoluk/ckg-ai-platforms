@@ -1,0 +1,46 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Vertex AI Platform,,Platform
+2,Gemini 2.0 Flash,1,Model
+3,Gemini 2.0 Pro,1,Model
+4,Gemini Ultra,1,Model
+5,Imagen 3,1,Model
+6,Text Embedding Gecko,1,Model
+7,GenerativeModel,2|3,SDK
+8,GenerationConfig,7,SDK
+9,SafetySettings,7,SDK
+10,Content,7,SDK
+11,Vertex AI Studio,1,Studio
+12,Prompt Design,11,Studio
+13,Grounding Google Search,7,Grounding
+14,Grounding Vertex AI Search,7,Grounding
+15,Agent Builder,1,Agent
+16,Dialogflow CX,15,Agent
+17,Search App,15,Agent
+18,Conversation App,15,Agent
+19,Data Store,15|17,Agent
+20,Vector Search,1,Search
+21,Matching Engine Index,20,Search
+22,IndexEndpoint,21,Search
+23,ANN approximate nearest neighbor,20,Search
+24,Kubeflow Pipeline,1,Pipeline
+25,pipeline component,24,Pipeline
+26,pipeline artifact,24,Pipeline
+27,pipeline DAG,24,Pipeline
+28,CustomJob,1,Training
+29,HyperparameterTuning,28,Training
+30,Distributed Training,28,Training
+31,Model Registry,1,Registry
+32,Model Version,31,Registry
+33,Model Evaluation,31|32,Registry
+34,Model Champion Challenger,33,Registry
+35,Feature Store,1,FeatureStore
+36,EntityType,35,FeatureStore
+37,Feature,35|36,FeatureStore
+38,Online Serving,35,FeatureStore
+39,Batch Prediction,1,Inference
+40,Prediction Endpoint,1,Inference
+41,AutoML,1,AutoML
+42,AutoML Tables,41,AutoML
+43,IAM Vertex,1,Security
+44,VPC Service Controls,43,Security
+45,CMEK,43,Security

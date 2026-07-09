@@ -1,0 +1,47 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,HuggingFace Hub,,Platform
+2,Model Hub,1,Hub
+3,Dataset Hub,1,Hub
+4,Space Hub,1,Hub
+5,Model Card,2,Hub
+6,LFS Large File Storage,2,Hub
+7,AutoModel,2,Transformers
+8,AutoTokenizer,2,Transformers
+9,pipeline API,7|8,Transformers
+10,Trainer,7,Transformers
+11,TrainingArguments,10,Transformers
+12,BPE Tokenizer,8,Tokenizer
+13,WordPiece Tokenizer,8,Tokenizer
+14,SentencePiece,8,Tokenizer
+15,Fast Tokenizer,8|12,Tokenizer
+16,LoRA,7,PEFT
+17,QLoRA,16,PEFT
+18,PromptTuning,7,PEFT
+19,IA3,7,PEFT
+20,AdaLoRA,16,PEFT
+21,PeftModel,16|17,PEFT
+22,SFTTrainer,10,TRL
+23,DPOTrainer,10,TRL
+24,PPOTrainer,10,TRL
+25,RewardTrainer,10,TRL
+26,InferenceClient,1,Inference
+27,InferenceEndpoint,26,Inference
+28,Serverless Inference API,26,Inference
+29,load_dataset,3,Dataset
+30,DatasetDict,29,Dataset
+31,dataset map,29,Dataset
+32,dataset filter,29,Dataset
+33,evaluate library,1,Evaluation
+34,metric,33,Evaluation
+35,EvaluationSuite,33,Evaluation
+36,DiffusionPipeline,1,Diffusers
+37,StableDiffusionPipeline,36,Diffusers
+38,Accelerator,1,Accelerate
+39,distributed training,38|10,Accelerate
+40,GGUF format,2,Quantization
+41,GGML format,40,Quantization
+42,llama.cpp integration,41,Quantization
+43,bitsandbytes,17,Quantization
+44,Gradio Blocks,4,Demo
+45,Gradio Interface,44,Demo
+46,ChatInterface,44,Demo
