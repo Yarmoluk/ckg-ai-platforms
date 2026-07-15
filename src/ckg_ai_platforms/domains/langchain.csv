@@ -1,49 +1,49 @@
-ConceptID,ConceptLabel,Dependencies,TaxonomyID
-1,LangChain Framework,,Platform
-2,LangChain Core,1,Library
-3,LangChain Community,1,Library
-4,LangChain CLI,1,Tool
-5,LangSmith,1,Observability
-6,LangChain Hub,1,Registry
-7,ChatPromptTemplate,2,Prompt
-8,PromptTemplate,2,Prompt
-9,MessagesPlaceholder,7,Prompt
-10,BaseLLM,2,Model
-11,ChatOpenAI,10,Model
-12,ChatAnthropic,10,Model
-13,Ollama,10,Model
-14,LCEL RunnableSequence,2,Orchestration
-15,RunnableParallel,14,Orchestration
-16,RunnablePassthrough,14,Orchestration
-17,RunnableLambda,14,Orchestration
-18,LLMChain,10|8,Chain
-19,SequentialChain,18,Chain
-20,RouterChain,18,Chain
-21,AgentExecutor,2,Agent
-22,ReAct Agent,21,Agent
-23,Tool-Calling Agent,21,Agent
-24,OpenAI Functions Agent,21,Agent
-25,BaseTool,2,Tool
-26,StructuredTool,25,Tool
-27,tool decorator,25,Tool
-28,Toolkit,25,Tool
-29,ConversationBufferMemory,2,Memory
-30,ConversationSummaryMemory,29|10,Memory
-31,VectorStoreMemory,29,Memory
-32,BaseRetriever,2,Retrieval
-33,VectorStoreRetriever,32,Retrieval
-34,MultiQueryRetriever,32|10,Retrieval
-35,ContextualCompressionRetriever,32,Retrieval
-36,ParentDocumentRetriever,32,Retrieval
-37,EnsembleRetriever,32,Retrieval
-38,BaseDocumentLoader,2,Loader
-39,WebBaseLoader,38,Loader
-40,PyPDFLoader,38,Loader
-41,UnstructuredLoader,38,Loader
-42,RecursiveCharacterTextSplitter,2,Splitter
-43,TokenTextSplitter,42,Splitter
-44,OpenAIEmbeddings,2,Embedding
-45,HuggingFaceEmbeddings,2,Embedding
-46,FAISS,33,VectorStore
-47,Chroma,33,VectorStore
-48,CallbackManager,5,Observability
+ConceptID,ConceptLabel,Dependencies,TaxonomyID,SourceURL,source_content_hash
+1,LangChain Framework,,Platform,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+2,LangChain Core,1,Library,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+3,LangChain Community,1,Library,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+4,LangChain CLI,1,Tool,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+5,LangSmith,1,Observability,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+6,LangChain Hub,1,Registry,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+7,ChatPromptTemplate,2,Prompt,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+8,PromptTemplate,2,Prompt,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+9,MessagesPlaceholder,7,Prompt,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+10,BaseLLM,2,Model,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+11,ChatOpenAI,10,Model,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+12,ChatAnthropic,10,Model,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+13,Ollama,10,Model,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+14,LCEL RunnableSequence,2,Orchestration,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+15,RunnableParallel,14,Orchestration,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+16,RunnablePassthrough,14,Orchestration,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+17,RunnableLambda,14,Orchestration,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+18,LLMChain,10|8,Chain,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+19,SequentialChain,18,Chain,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+20,RouterChain,18,Chain,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+21,AgentExecutor,2,Agent,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+22,ReAct Agent,21,Agent,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+23,Tool-Calling Agent,21,Agent,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+24,OpenAI Functions Agent,21,Agent,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+25,BaseTool,2,Tool,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+26,StructuredTool,25,Tool,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+27,tool decorator,25,Tool,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+28,Toolkit,25,Tool,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+29,ConversationBufferMemory,2,Memory,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+30,ConversationSummaryMemory,29|10,Memory,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+31,VectorStoreMemory,29,Memory,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+32,BaseRetriever,2,Retrieval,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+33,VectorStoreRetriever,32,Retrieval,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+34,MultiQueryRetriever,32|10,Retrieval,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+35,ContextualCompressionRetriever,32,Retrieval,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+36,ParentDocumentRetriever,32,Retrieval,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+37,EnsembleRetriever,32,Retrieval,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+38,BaseDocumentLoader,2,Loader,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+39,WebBaseLoader,38,Loader,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+40,PyPDFLoader,38,Loader,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+41,UnstructuredLoader,38,Loader,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+42,RecursiveCharacterTextSplitter,2,Splitter,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+43,TokenTextSplitter,42,Splitter,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+44,OpenAIEmbeddings,2,Embedding,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+45,HuggingFaceEmbeddings,2,Embedding,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+46,FAISS,33,VectorStore,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+47,Chroma,33,VectorStore,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
+48,CallbackManager,5,Observability,https://python.langchain.com/docs/introduction/,sha256:75a86f60f9aa30d3f7f3e407827c17b9df90f17370237bc8a3c80b5c98b33ff5
