@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "ckg-ai-platforms"
-version = "0.2.2"
+version = "0.2.3"
 description = "AI developer platforms as traversable knowledge graphs — LangChain, LangGraph, OpenAI, Anthropic, HuggingFace, AWS Bedrock, Vertex AI — MCP-native"
 readme = "README.md"
 license = { text = "MIT" }
