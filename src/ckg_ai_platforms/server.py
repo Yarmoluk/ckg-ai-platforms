@@ -78,7 +78,7 @@ def ask_platform(question: str, domain: str = "") -> str:
             "Re-call with domain= set explicitly."
         )
 
-    id_to_label, label_to_id, prerequisites, dependents, taxonomy = load_graph(domain)
+    id_to_label, label_to_id, prerequisites, dependents, taxonomy, _ = load_graph(domain)
     meta = load_domain_meta(domain)
 
     cid = find_concept(label_to_id, question)
@@ -138,7 +138,7 @@ def search_concepts(query: str, domain: str) -> str:
         query: Substring to search for (case-insensitive).
         domain: One of the available domains.
     """
-    _, label_to_id, _, _, taxonomy = load_graph(domain)
+    _, label_to_id, _, _, taxonomy, _ = load_graph(domain)
     q = query.lower()
     matches = [(label, cid) for label, cid in label_to_id.items() if q in label][:20]
     if not matches:
@@ -158,7 +158,7 @@ def query_ckg(concept: str, domain: str, depth: int = 3) -> str:
         domain: Domain to search in.
         depth: Upstream hops to include (1-5, default 3).
     """
-    id_to_label, label_to_id, prerequisites, dependents, taxonomy = load_graph(domain)
+    id_to_label, label_to_id, prerequisites, dependents, taxonomy, _ = load_graph(domain)
     cid = find_concept(label_to_id, concept)
     if cid is None:
         return f"Concept '{concept}' not found in {domain}."
@@ -190,7 +190,7 @@ def get_prerequisites(concept: str, domain: str) -> str:
         concept: Concept to trace (partial match supported).
         domain: Domain to search in.
     """
-    id_to_label, label_to_id, prerequisites, _, _ = load_graph(domain)
+    id_to_label, label_to_id, prerequisites, _, _, _ = load_graph(domain)
     cid = find_concept(label_to_id, concept)
     if cid is None:
         return f"Concept '{concept}' not found in {domain}."
@@ -201,6 +201,63 @@ def get_prerequisites(concept: str, domain: str) -> str:
     return f"Prerequisite chain for {id_to_label[cid]}:\n" + "\n".join(
         f"  {'  ' * i}← {label}" for i, label in enumerate(chain[1:])
     )
+
+
+@mcp.tool()
+def verify_source(concept: str, domain: str) -> str:
+    """Return the source URL and content hash for a concept node.
+
+    Audit chain:
+        edge answer → graph commit → source_hash → source_url (fetch hint)
+
+    Verification:
+        curl -s <source_url> | sha256sum
+        # compare output to source_hash
+
+    Args:
+        concept: Concept label (partial match supported).
+        domain: Domain to search in (e.g. 'anthropic-sdk', 'aws-bedrock').
+    """
+    id_to_label, label_to_id, _, _, taxonomy, provenance = load_graph(domain)
+    cid = find_concept(label_to_id, concept.lower())
+    if not cid:
+        return f"Concept '{concept}' not found in {domain}. Use search_concepts() to find the closest match."
+
+    label = id_to_label[cid]
+    prov = provenance.get(cid, {})
+    source_url = prov.get("source_url") or "unknown"
+    source_hash = prov.get("source_hash") or "sha256:not-computed"
+
+    sentinel_notes = {
+        "sha256:restricted": "Source returned 4xx/5xx — page requires auth or is gone.",
+        "sha256:unavailable": "Network error at hash-compute time.",
+        "sha256:no-source-url": "No source URL declared for this node.",
+    }
+    note = sentinel_notes.get(source_hash, "")
+
+    lines = [
+        f"## Source provenance — {label} ({domain})",
+        f"",
+        f"**concept:**      {label}",
+        f"**taxonomy:**     {taxonomy.get(cid, 'unknown')}",
+        f"**source_url:**   {source_url}",
+        f"**source_hash:**  {source_hash}",
+        f"**provenance:**   GuardrailDecisionV1 · v1",
+        f"",
+    ]
+    if note:
+        lines += [f"⚠ {note}", ""]
+    else:
+        lines += [
+            "**Verification:**",
+            f"```bash",
+            f"curl -s '{source_url}' | sha256sum",
+            f"# expected: {source_hash.removeprefix('sha256:')}",
+            f"```",
+            "",
+            "**source_hash** is the trust anchor. **source_url** is a fetch hint — page can change silently.",
+        ]
+    return "\n".join(lines)
 
 
 def main() -> None:
