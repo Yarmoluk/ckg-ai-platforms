@@ -1,3 +1,4 @@
+<!-- mcp-name: io.github.Yarmoluk/ckg-ai-platforms -->
 # ckg-ai-platforms
 
 AI developer platforms as traversable knowledge graphs — MCP-native.
