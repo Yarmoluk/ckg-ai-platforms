@@ -17,6 +17,14 @@ This package is a public MCP server. Install it, connect it to Claude Desktop or
 
 No API key is required. The server runs locally over MCP stdio using the MCP Python SDK 2.x and does not phone home.
 
+## Visual Atlas
+
+[![Ontology-first atlas of AWS AgentCore, Google Gemini/Vertex, Microsoft AI agents, and Palantir Foundry](docs/assets/agent-platform-atlas-ontology-thesis.png)](https://yarmoluk.github.io/ckg-ai-platforms/)
+
+The poster maps the four v0.3.0 agent-platform additions: AWS Bedrock AgentCore, Google's Gemini/Vertex agent stack, Microsoft's AI agent stack, and Palantir Foundry. That slice contains 161 concepts and 216 typed edges. The full MCP package includes 11 domains, 475 nodes, and 550 typed CSV edges.
+
+[Open the GitHub Pages explainer](https://yarmoluk.github.io/ckg-ai-platforms/)
+
 ## What You Can Do
 
 | Use case | MCP tool |
