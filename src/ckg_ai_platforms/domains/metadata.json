@@ -1,37 +1,57 @@
 {
-  "langchain": {
-    "nodes": 48,
-    "edges": 71,
-    "description": "LangChain ecosystem \u2014 chains, agents, memory, retrieval, LCEL, tools, and LangSmith"
-  },
-  "langgraph": {
-    "nodes": 42,
-    "edges": 58,
-    "description": "LangGraph agent framework \u2014 stateful graphs, persistence, human-in-the-loop, multi-agent"
+  "anthropic-sdk": {
+    "nodes": 44,
+    "edges": 43,
+    "description": "Anthropic Claude API and SDK - messages, tool use, prompt caching, MCP adapters, batching, files, and error handling"
   },
   "aws-bedrock": {
     "nodes": 46,
-    "edges": 67,
-    "description": "AWS Bedrock enterprise AI \u2014 foundation models, agents, knowledge bases, guardrails, fine-tuning"
+    "edges": 48,
+    "description": "Amazon Bedrock - foundation models, Converse API, agents, knowledge bases, guardrails, fine-tuning, and deployment"
   },
-  "anthropic-sdk": {
-    "nodes": 44,
-    "edges": 62,
-    "description": "Anthropic Claude API and SDK \u2014 messages, tools, extended thinking, prompt caching, MCP, batching"
+  "aws-bedrock-agentcore": {
+    "nodes": 36,
+    "edges": 46,
+    "description": "Amazon Bedrock AgentCore - runtime, gateway, memory, identity, observability, tools, Strands, MCP, and RAG touchpoints"
+  },
+  "google-gemini-agent-platform": {
+    "nodes": 40,
+    "edges": 46,
+    "description": "Google Gemini Enterprise Agent Platform - Vertex AI, Agent Engine, ADK, MCPToolset, A2A, memory, evaluation, and deployment"
   },
   "huggingface": {
     "nodes": 46,
-    "edges": 65,
-    "description": "HuggingFace ecosystem \u2014 Hub, Transformers, PEFT/LoRA, TRL, Inference, Datasets, Gradio"
+    "edges": 49,
+    "description": "Hugging Face ecosystem - Hub, Transformers, PEFT/LoRA, TRL, Inference, Datasets, and Gradio"
+  },
+  "langchain": {
+    "nodes": 48,
+    "edges": 50,
+    "description": "LangChain ecosystem - chains, agents, memory, retrieval, LCEL, tools, LangSmith, and output parsers"
+  },
+  "langgraph": {
+    "nodes": 42,
+    "edges": 51,
+    "description": "LangGraph agent framework - stateful graphs, persistence, human-in-the-loop workflows, cycles, and multi-agent control"
+  },
+  "microsoft-ai-agent-stack": {
+    "nodes": 40,
+    "edges": 50,
+    "description": "Microsoft AI agent stack - Azure AI Foundry, Foundry Agent Service, Semantic Kernel, MCP plugins, tools, memory, and governance"
   },
   "openai-api": {
     "nodes": 43,
-    "edges": 59,
-    "description": "OpenAI API ecosystem \u2014 chat completions, tools, structured outputs, assistants, fine-tuning, batch"
+    "edges": 45,
+    "description": "OpenAI API ecosystem - chat completions, tools, structured outputs, assistants, embeddings, fine-tuning, moderation, and batch"
+  },
+  "palantir-foundry": {
+    "nodes": 45,
+    "edges": 74,
+    "description": "Palantir Foundry and AIP - ontology, object types, link types, action types, datasets, provenance, governance, and application building"
   },
   "vertex-ai": {
     "nodes": 45,
-    "edges": 63,
-    "description": "Google Vertex AI \u2014 Gemini, generative AI, Agent Builder, Vector Search, pipelines, MLOps"
+    "edges": 48,
+    "description": "Google Vertex AI - Gemini, Model Garden, Agent Builder, Vector Search, pipelines, evaluation, endpoints, and MLOps"
   }
 }

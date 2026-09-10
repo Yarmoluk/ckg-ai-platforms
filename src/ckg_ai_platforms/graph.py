@@ -1,20 +1,29 @@
 import csv
 import json
-from collections import defaultdict, deque
+from collections import Counter, defaultdict, deque
 from pathlib import Path
+from typing import Iterable
 
 DOMAINS_DIR = Path(__file__).parent / "domains"
 
-EDGE_TYPES = {"REQUIRES", "ENABLES", "RELATES_TO", "IMPLEMENTS"}
+DEFAULT_EDGE_TYPE = "REQUIRES"
 
 
 def _parse_dep(token: str) -> tuple[str, str, float | None]:
     """Split 'ID:EDGETYPE:CONFIDENCE' token.
     EDGETYPE defaults to REQUIRES. CONFIDENCE is float 0-1 or None if unreviewed.
     """
-    parts = token.split(":", 2)
-    etype = parts[1] if len(parts) >= 2 and parts[1] in EDGE_TYPES else "REQUIRES"
+    parts = [p.strip() for p in token.split(":", 2)]
+    etype = DEFAULT_EDGE_TYPE
     confidence = None
+
+    if len(parts) >= 2 and parts[1]:
+        candidate = parts[1].upper()
+        try:
+            confidence = float(candidate)
+        except ValueError:
+            etype = candidate
+
     if len(parts) == 3 and parts[2]:
         try:
             confidence = float(parts[2])
@@ -61,6 +70,109 @@ def load_graph(domain: str):
                 dependents[dep_id].append((cid, etype, confidence))
 
     return id_to_label, label_to_id, prerequisites, dependents, taxonomy, provenance
+
+
+def iter_edges(domain: str, concept_id: str | None = None) -> list[dict]:
+    """Return typed edges as from-concept -> to-concept records."""
+    id_to_label, _, prerequisites, _, _, _ = load_graph(domain)
+    rows: list[dict] = []
+    for from_id, deps in prerequisites.items():
+        if concept_id is not None and from_id != concept_id:
+            continue
+        for to_id, etype, confidence in deps:
+            rows.append(
+                {
+                    "from_id": from_id,
+                    "from_label": id_to_label.get(from_id, from_id),
+                    "relation": etype,
+                    "to_id": to_id,
+                    "to_label": id_to_label.get(to_id, to_id),
+                    "confidence": confidence,
+                }
+            )
+    return rows
+
+
+def domain_stats(domain: str) -> dict:
+    """Return counts and coverage for one packaged domain."""
+    id_to_label, _, prerequisites, _, taxonomy, provenance = load_graph(domain)
+    edge_count = sum(len(deps) for deps in prerequisites.values())
+    relation_counts = Counter(
+        etype for deps in prerequisites.values() for _dep_id, etype, _confidence in deps
+    )
+    taxonomy_counts = Counter(taxonomy.values())
+    sourced = sum(
+        1
+        for prov in provenance.values()
+        if prov.get("source_url") and prov.get("source_hash")
+    )
+    meta = load_domain_meta(domain)
+    return {
+        "domain": domain,
+        "nodes": len(id_to_label),
+        "edges": edge_count,
+        "source_coverage": f"{sourced}/{len(id_to_label)}",
+        "description": meta.get("description", ""),
+        "relation_counts": dict(sorted(relation_counts.items())),
+        "taxonomy_counts": dict(sorted(taxonomy_counts.items())),
+    }
+
+
+def all_domain_stats() -> list[dict]:
+    return [domain_stats(domain) for domain in available_domains()]
+
+
+def atlas_totals() -> dict:
+    stats = all_domain_stats()
+    return {
+        "domains": len(stats),
+        "nodes": sum(row["nodes"] for row in stats),
+        "edges": sum(row["edges"] for row in stats),
+    }
+
+
+def search_all_concepts(
+    query: str,
+    domains: Iterable[str] | None = None,
+    limit: int = 40,
+) -> list[dict]:
+    """Search concept labels across domains and return ranked matches."""
+    q = query.lower().strip()
+    if not q:
+        return []
+
+    selected = list(domains) if domains is not None else available_domains()
+    matches: list[tuple[int, str, str, str, dict]] = []
+    for domain in selected:
+        id_to_label, label_to_id, _, _, taxonomy, provenance = load_graph(domain)
+        for label_lower, cid in label_to_id.items():
+            if q not in label_lower:
+                continue
+            if label_lower == q:
+                score = 0
+            elif label_lower.startswith(q):
+                score = 1
+            else:
+                score = 2
+            prov = provenance.get(cid, {})
+            matches.append(
+                (
+                    score,
+                    domain,
+                    id_to_label[cid].lower(),
+                    cid,
+                    {
+                        "domain": domain,
+                        "concept_id": cid,
+                        "label": id_to_label[cid],
+                        "taxonomy": taxonomy.get(cid, ""),
+                        "source_url": prov.get("source_url", ""),
+                        "source_hash": prov.get("source_hash", ""),
+                    },
+                )
+            )
+    matches.sort(key=lambda item: (item[0], item[1], item[2], item[3]))
+    return [row for *_sort, row in matches[: max(1, min(limit, 100))]]
 
 
 def find_concept(label_to_id: dict, query: str) -> str | None:

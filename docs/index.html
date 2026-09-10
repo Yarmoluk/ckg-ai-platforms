@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta property="og:title" content="ckg-ai-platforms — 7 AI developer platform knowledge graphs">
-<meta property="og:description" content="LangChain · LangGraph · OpenAI · Anthropic · HuggingFace · AWS Bedrock · Vertex AI — 314 nodes, 445 edges, traversable dependency graphs for platform engineers.">
-<title>ckg-ai-platforms — AI Developer Platforms as Knowledge Graphs</title>
+<meta property="og:title" content="ckg-ai-platforms - AI platform atlas MCP">
+<meta property="og:description" content="11 source-pinned AI developer and agent platform graphs - 475 nodes, 550 typed CSV edges, installable as a local MCP server.">
+<title>ckg-ai-platforms - AI Platform Atlas MCP</title>
 <style>
 :root {
   --bg:#fbfbf9; --surf:#fff; --surf2:#f6f5ef; --bdr:#e6e4da; --bdr2:#d8d5c8;
@@ -120,16 +120,16 @@ tbody tr:nth-child(even){background:var(--surf2)}
 <div class="w">
 
 <header class="hd">
-  <div class="hd-eye">Graphify.md · community-built · not affiliated with any platform vendor</div>
+  <div class="hd-eye">Graphify.md · community-built · atlas MCP</div>
   <h1>AI developer platforms<br>as traversable knowledge graphs</h1>
-  <p class="hd-opener">Seven AI developer platforms — LangChain, LangGraph, OpenAI API, Anthropic SDK, HuggingFace, AWS Bedrock, and Vertex AI — as typed dependency graphs. 314 nodes, 445 edges, all platforms in one MCP server. Served over MCP with no inference at query time. Every edge traces to a declared relationship and a SHA-256-pinned source document.</p>
-  <div class="not-callout">Not a general-purpose semantic search layer — if it's not a declared edge, the graph doesn't return it.</div>
+  <p class="hd-opener">Eleven AI developer and agent platforms as typed, source-pinned graphs. Search concepts, compare vocabulary across vendors, inspect MCP touchpoints, traverse declared relationships, and verify source hashes from one local MCP server.</p>
+  <div class="not-callout">Not a general-purpose semantic search layer - if it's not a declared edge, the graph doesn't return it.</div>
   <div class="pip"><span class="$">$</span><span><span class="cmd">pip install</span> <span class="pkg">ckg-ai-platforms</span></span></div>
-  <p class="hd-quote">"The graph doesn't guess — it traverses. Every answer traces to a declared edge."</p>
+  <p class="hd-quote">"The graph doesn't guess - it traverses. Every answer traces to a declared edge."</p>
   <div class="badges">
-    <span class="badge a">PyPI v0.2.1</span>
-    <span class="badge a">7 platforms · 314 nodes · 445 edges</span>
-    <span class="badge a">F1 0.471 · 4× RAG</span>
+    <span class="badge a">PyPI v0.3.0</span>
+    <span class="badge a">11 domains · 475 nodes · 550 typed edges</span>
+    <span class="badge a">local stdio MCP</span>
     <span class="badge a">KRB v0.6.2</span>
     <span class="badge">MIT</span>
     <span class="badge">Graphify.md</span>
@@ -140,12 +140,12 @@ tbody tr:nth-child(even){background:var(--surf2)}
     <a href="https://github.com/Yarmoluk/ckg-benchmark/blob/main/paper/main.pdf">Benchmark paper</a>
     <a href="https://huggingface.co/datasets/danyarm/ckg-benchmark">HF dataset</a>
     <a href="https://graphifymd.com">graphifymd.com</a>
-    <a href="https://graphifymd.com/pro/">Pro · 97 domains</a>
+    <a href="https://graphifymd.com/pro/">Graphify.md</a>
   </div>
 </header>
 
-<h2>Seven platform graphs</h2>
-<p style="font-size:13px;color:var(--mid);margin:0 0 8px">314 nodes · 445 edges · hover to explore · colored by platform</p>
+<h2>Eleven platform graphs</h2>
+<p style="font-size:13px;color:var(--mid);margin:0 0 8px">475 nodes · 550 typed CSV edges · hover to explore sample vocabulary · colored by platform family</p>
 <div class="graph-box">
   <canvas id="graph-canvas" height="380"></canvas>
   <div class="graph-legend">
@@ -153,9 +153,9 @@ tbody tr:nth-child(even){background:var(--surf2)}
     <span class="leg-item"><span class="leg-dot" style="background:var(--c-lg)"></span>LangGraph</span>
     <span class="leg-item"><span class="leg-dot" style="background:var(--c-oai)"></span>OpenAI</span>
     <span class="leg-item"><span class="leg-dot" style="background:var(--c-ant)"></span>Anthropic</span>
-    <span class="leg-item"><span class="leg-dot" style="background:var(--c-hf)"></span>HuggingFace</span>
+    <span class="leg-item"><span class="leg-dot" style="background:var(--c-hf)"></span>Hugging Face</span>
     <span class="leg-item"><span class="leg-dot" style="background:var(--c-aws)"></span>Bedrock</span>
-    <span class="leg-item"><span class="leg-dot" style="background:var(--c-vtx)"></span>Vertex AI</span>
+    <span class="leg-item"><span class="leg-dot" style="background:var(--c-vtx)"></span>Vertex / Gemini / Microsoft / Palantir</span>
   </div>
 </div>
 
@@ -163,58 +163,74 @@ tbody tr:nth-child(even){background:var(--surf2)}
 <div class="plat-grid">
   <div class="plat">
     <div class="plat-head"><span class="plat-dot" style="background:var(--c-lc)"></span><span class="plat-name">LangChain</span></div>
-    <div class="plat-stats">48 nodes · 71 edges</div>
+    <div class="plat-stats">48 nodes · 50 edges</div>
     <p>Chains · Agents · LCEL · RunnableSequence · Memory · Retrievers · LangSmith · Output Parsers</p>
   </div>
   <div class="plat">
     <div class="plat-head"><span class="plat-dot" style="background:var(--c-lg)"></span><span class="plat-name">LangGraph</span></div>
-    <div class="plat-stats">42 nodes · 58 edges</div>
+    <div class="plat-stats">42 nodes · 51 edges</div>
     <p>Graph State · StateGraph · Nodes · Edges · Cycles · Persistence · Checkpointing · Human-in-the-Loop</p>
   </div>
   <div class="plat">
     <div class="plat-head"><span class="plat-dot" style="background:var(--c-oai)"></span><span class="plat-name">OpenAI API</span></div>
-    <div class="plat-stats">43 nodes · 59 edges</div>
+    <div class="plat-stats">43 nodes · 45 edges</div>
     <p>Chat Completions · Assistants · Embeddings · DALL-E · Whisper · Function Calling · Tool Use · Batch API</p>
   </div>
   <div class="plat">
     <div class="plat-head"><span class="plat-dot" style="background:var(--c-ant)"></span><span class="plat-name">Anthropic SDK</span></div>
-    <div class="plat-stats">44 nodes · 62 edges</div>
+    <div class="plat-stats">44 nodes · 43 edges</div>
     <p>Messages API · Tool Use · Prompt Caching · Computer Use · Extended Thinking · Streaming · Batch Processing</p>
   </div>
   <div class="plat">
-    <div class="plat-head"><span class="plat-dot" style="background:var(--c-hf)"></span><span class="plat-name">HuggingFace</span></div>
-    <div class="plat-stats">46 nodes · 65 edges</div>
+    <div class="plat-head"><span class="plat-dot" style="background:var(--c-hf)"></span><span class="plat-name">Hugging Face</span></div>
+    <div class="plat-stats">46 nodes · 49 edges</div>
     <p>Hub · Transformers · Spaces · Datasets · Inference API · PEFT · Accelerate · Safetensors</p>
   </div>
   <div class="plat">
     <div class="plat-head"><span class="plat-dot" style="background:var(--c-aws)"></span><span class="plat-name">AWS Bedrock</span></div>
-    <div class="plat-stats">46 nodes · 67 edges</div>
+    <div class="plat-stats">46 nodes · 48 edges</div>
     <p>Converse API · Guardrails · Knowledge Bases · Agents · Model Catalog · Prompt Management · Titan Embeddings</p>
   </div>
   <div class="plat">
     <div class="plat-head"><span class="plat-dot" style="background:var(--c-vtx)"></span><span class="plat-name">Vertex AI</span></div>
-    <div class="plat-stats">45 nodes · 63 edges</div>
+    <div class="plat-stats">45 nodes · 48 edges</div>
     <p>Model Garden · Gemini API · Evaluation · Fine-tuning · Pipelines · Feature Store · Vertex AI Search</p>
+  </div>
+  <div class="plat">
+    <div class="plat-head"><span class="plat-dot" style="background:var(--c-aws)"></span><span class="plat-name">AWS AgentCore</span></div>
+    <div class="plat-stats">36 nodes · 46 edges</div>
+    <p>Runtime · Gateway · Memory · Identity · Observability · Strands · MCP · RAG touchpoints</p>
+  </div>
+  <div class="plat">
+    <div class="plat-head"><span class="plat-dot" style="background:var(--c-vtx)"></span><span class="plat-name">Gemini Agent Platform</span></div>
+    <div class="plat-stats">40 nodes · 46 edges</div>
+    <p>Vertex AI · Agent Engine · ADK · MCPToolset · A2A · Memory Bank · Evaluation · Deployment</p>
+  </div>
+  <div class="plat">
+    <div class="plat-head"><span class="plat-dot" style="background:var(--c-oai)"></span><span class="plat-name">Microsoft AI Agents</span></div>
+    <div class="plat-stats">40 nodes · 50 edges</div>
+    <p>Azure AI Foundry · Semantic Kernel · MCP plugins · Agent Service · Tools · Memory · Governance</p>
+  </div>
+  <div class="plat">
+    <div class="plat-head"><span class="plat-dot" style="background:var(--c-ant)"></span><span class="plat-name">Palantir Foundry</span></div>
+    <div class="plat-stats">45 nodes · 74 edges</div>
+    <p>Ontology · Object Types · Link Types · Action Types · AIP · Datasets · Provenance · Governance</p>
   </div>
 </div>
 
 <h2>Traversal examples</h2>
-<pre><span class="kw">query_ckg</span>(<span class="st">"RunnableSequence"</span>, <span class="st">"langchain"</span>, <span class="st">3</span>)
-→ RunnableSequence
-  ├─ [REQUIRES] Runnable Interface
-  │    └─ [ENABLES] Batch Processing
-  └─ [REQUIRES] LCEL
-       └─ [ENABLES] Streaming Output
+<pre><span class="kw">list_atlas</span>()
+<span class="cm">11 domains, 475 nodes, 550 typed CSV edges</span>
 
-<span class="kw">get_prerequisites</span>(<span class="st">"Prompt Caching"</span>, <span class="st">"anthropic-sdk"</span>)
-→ Prompt Caching → Messages API → API Key → Rate Limits
-  <span class="cm">Full prerequisite chain in 4 hops.</span>
+<span class="kw">find_mcp_touchpoints</span>()
+<span class="cm">Returns MCP concepts in AWS AgentCore, Google ADK, Microsoft Semantic Kernel,
+Anthropic SDK, and related platform graphs.</span>
 
-<span class="kw">query_ckg</span>(<span class="st">"Converse API"</span>, <span class="st">"aws-bedrock"</span>, <span class="st">2</span>)
-→ Converse API
-  ├─ [REQUIRES] Model Access Request
-  ├─ [ENABLES] Guardrails
-  └─ [ENABLES] Knowledge Bases</pre>
+<span class="kw">get_concept_context</span>(<span class="st">"Palantir Ontology"</span>, <span class="st">"palantir-foundry"</span>)
+<span class="cm">Returns direct outgoing and incoming typed relationships plus source hash.</span>
+
+<span class="kw">compare_platforms</span>(<span class="st">"memory"</span>)
+<span class="cm">Shows which packaged platforms declare memory-related concepts.</span></pre>
 
 <h2>Install</h2>
 <pre><span class="cm"># pip</span>
@@ -229,19 +245,22 @@ pip install ckg-ai-platforms
 <span class="sy">}}</span>
 
 <span class="cm"># Python library</span>
-<span class="kw">from</span> ckg_ai_platforms <span class="kw">import</span> ask_platform, list_domains
-result = ask_platform(<span class="st">"How does LCEL RunnableSequence work?"</span>)
-result = ask_platform(<span class="st">"explain tool use"</span>, domain=<span class="st">"anthropic-sdk"</span>)</pre>
+<span class="kw">from</span> ckg_ai_platforms <span class="kw">import</span> compare_platforms, get_concept_context
+matches = compare_platforms(<span class="st">"MCP"</span>)
+context = get_concept_context(<span class="st">"AgentCore Gateway"</span>, <span class="st">"aws-bedrock-agentcore"</span>)</pre>
 
 <h2>Tools</h2>
 <div class="tw"><table>
   <thead><tr><th>Tool</th><th>Description</th></tr></thead>
   <tbody>
-    <tr><td class="mono">list_domains()</td><td>All 7 platforms with node/edge counts</td></tr>
-    <tr><td class="mono">query_ckg(concept, domain, depth)</td><td>Typed subgraph around any concept (1–5 hops)</td></tr>
-    <tr><td class="mono">get_prerequisites(concept, domain)</td><td>Full upstream prerequisite chain in dependency order</td></tr>
+    <tr><td class="mono">list_atlas()</td><td>All packaged platform graphs with counts and source coverage</td></tr>
+    <tr><td class="mono">compare_platforms(query)</td><td>Search one term across all vendor/platform graphs</td></tr>
+    <tr><td class="mono">find_mcp_touchpoints()</td><td>Locate MCP-related concepts and direct relationships</td></tr>
+    <tr><td class="mono">get_concept_context(concept, domain)</td><td>Source-pinned direct typed relationships</td></tr>
+    <tr><td class="mono">query_ckg(concept, domain, depth)</td><td>Typed subgraph around any concept, 1-5 hops</td></tr>
+    <tr><td class="mono">get_prerequisites(concept, domain)</td><td>Compatibility tool for upstream relationship chains</td></tr>
     <tr><td class="mono">search_concepts(query, domain)</td><td>Fuzzy search within any domain</td></tr>
-    <tr><td class="mono">ask_platform(question, domain)</td><td>Natural language query — auto-traverses the relevant subgraph</td></tr>
+    <tr><td class="mono">ask_platform(question, domain)</td><td>Natural language query with domain auto-detection</td></tr>
   </tbody>
 </table></div>
 
@@ -250,7 +269,7 @@ result = ask_platform(<span class="st">"explain tool use"</span>, domain=<span c
   <div class="bc hero">
     <div class="bc-n">0.471</div>
     <div class="bc-l">CKG Macro F1</div>
-    <div class="bc-sub">269 tokens · $7.81/1k</div>
+    <div class="bc-sub">separate public benchmark</div>
   </div>
   <div class="bc dim">
     <div class="bc-n">0.123</div>
@@ -258,25 +277,25 @@ result = ask_platform(<span class="st">"explain tool use"</span>, domain=<span c
     <div class="bc-sub">2,982 tokens · $76.23/1k</div>
   </div>
   <div class="bc dim">
-    <div class="bc-n">11×</div>
-    <div class="bc-l">Fewer tokens</div>
-    <div class="bc-sub">per query vs RAG</div>
+    <div class="bc-n">3.8x</div>
+    <div class="bc-l">Macro F1 vs RAG</div>
+    <div class="bc-sub">v0.6.2 structural harness</div>
   </div>
 </div>
 
 <h2>Try it now</h2>
 <div class="cta">
-  <h3>7 platform graphs. One install. No API key.</h3>
-  <p>Platform engineers waste hours tracking down which Bedrock model requires what permissions, or why a LangGraph StateGraph node fails without a checkpointer. The graphs answer it in a traversal.</p>
+  <h3>11 platform graphs. One install. No API key.</h3>
+  <p>Give an agent a small map before it reads pages of vendor prose. The server helps it find platform concepts, compare vocabulary, inspect MCP touchpoints, traverse declared relationships, and verify sources.</p>
   <div class="cta-btns">
-    <a class="btn pri" href="https://graphifymd.com">Get started on graphifymd.com →</a>
+    <a class="btn pri" href="https://github.com/Yarmoluk/ckg-ai-platforms">View on GitHub</a>
     <a class="btn sec" href="https://pypi.org/project/ckg-ai-platforms/">View on PyPI</a>
     <a class="btn sec" href="https://github.com/Yarmoluk/ckg-benchmark/blob/main/paper/main.pdf">Read the paper</a>
   </div>
-  <p style="font-size:12px;margin-top:4px"><strong>97 domains available</strong> · ckg-mcp serves the full Graphify.md ecosystem · Free tier included</p>
+  <p style="font-size:12px;margin-top:4px"><strong>Pattern:</strong> public docs to source-pinned graph to MCP tools.</p>
 </div>
 
-<div class="footer">Built by <a href="https://graphifymd.com">Graphify.md</a> · <a href="https://pypi.org/project/ckg-ai-platforms/">PyPI</a> · patent pending<br><span style="margin-top:4px;display:inline-block;font-size:9.5px">Community-built. Not affiliated with LangChain, OpenAI, Anthropic, HuggingFace, AWS, or Google. All referenced trademarks belong to their respective owners.</span></div>
+<div class="footer">Built by <a href="https://graphifymd.com">Graphify.md</a> · <a href="https://pypi.org/project/ckg-ai-platforms/">PyPI</a> · patent pending<br><span style="margin-top:4px;display:inline-block;font-size:9.5px">Community-built. Not affiliated with LangChain, OpenAI, Anthropic, Hugging Face, AWS, Google, Microsoft, or Palantir. All referenced trademarks belong to their respective owners.</span></div>
 
 </div>
 
@@ -292,21 +311,30 @@ const NS=[
   {id:'OpenAI API',l:'oai',r:10},{id:'Chat\nCompletions',l:'oai',r:7},{id:'Assistants',l:'oai',r:7},{id:'Embeddings',l:'oai',r:6},{id:'Function\nCalling',l:'oai',r:6},
   // Anthropic
   {id:'Anthropic\nSDK',l:'ant',r:10},{id:'Messages\nAPI',l:'ant',r:7},{id:'Tool Use',l:'ant',r:7},{id:'Prompt\nCaching',l:'ant',r:6},{id:'Computer\nUse',l:'ant',r:6},
-  // HuggingFace
-  {id:'HuggingFace',l:'hf',r:10},{id:'Transformers',l:'hf',r:7},{id:'Spaces',l:'hf',r:6},{id:'Datasets',l:'hf',r:7},{id:'PEFT',l:'hf',r:6},
+  // Hugging Face
+  {id:'Hugging\nFace',l:'hf',r:10},{id:'Transformers',l:'hf',r:7},{id:'Spaces',l:'hf',r:6},{id:'Datasets',l:'hf',r:7},{id:'PEFT',l:'hf',r:6},
   // Bedrock
   {id:'AWS Bedrock',l:'aws',r:10},{id:'Converse\nAPI',l:'aws',r:7},{id:'Guardrails',l:'aws',r:7},{id:'Knowledge\nBases',l:'aws',r:6},{id:'Agents',l:'aws',r:6},
   // Vertex AI
   {id:'Vertex AI',l:'vtx',r:10},{id:'Model\nGarden',l:'vtx',r:7},{id:'Gemini\nAPI',l:'vtx',r:7},{id:'Evaluation',l:'vtx',r:6},{id:'Fine-tuning',l:'vtx',r:6},
+  // Agent platform atlas additions
+  {id:'AWS\nAgentCore',l:'aws',r:10},{id:'AgentCore\nGateway',l:'aws',r:7},{id:'MCP Server',l:'aws',r:7},
+  {id:'Gemini\nAgent Platform',l:'vtx',r:10},{id:'ADK',l:'vtx',r:7},{id:'A2A',l:'vtx',r:6},
+  {id:'Microsoft\nAI Agents',l:'oai',r:10},{id:'Semantic\nKernel',l:'oai',r:7},{id:'MCP Plugin',l:'oai',r:7},
+  {id:'Palantir\nFoundry',l:'ant',r:10},{id:'Ontology',l:'ant',r:8},{id:'Object Type',l:'ant',r:7},{id:'Link Type',l:'ant',r:7},
 ];
 const ES=[
   ['LangChain','LCEL'],['LangChain','Runnables'],['LCEL','Runnables'],['LangChain','Retrievers'],['LangChain','LangSmith'],
   ['LangGraph','Graph State'],['LangGraph','StateGraph'],['StateGraph','Graph State'],['LangGraph','Cycles'],['LangGraph','Checkpoint'],
   ['OpenAI API','Chat\nCompletions'],['OpenAI API','Assistants'],['OpenAI API','Embeddings'],['OpenAI API','Function\nCalling'],
   ['Anthropic\nSDK','Messages\nAPI'],['Anthropic\nSDK','Tool Use'],['Anthropic\nSDK','Prompt\nCaching'],['Anthropic\nSDK','Computer\nUse'],
-  ['HuggingFace','Transformers'],['HuggingFace','Spaces'],['HuggingFace','Datasets'],['HuggingFace','PEFT'],
+  ['Hugging\nFace','Transformers'],['Hugging\nFace','Spaces'],['Hugging\nFace','Datasets'],['Hugging\nFace','PEFT'],
   ['AWS Bedrock','Converse\nAPI'],['AWS Bedrock','Guardrails'],['AWS Bedrock','Knowledge\nBases'],['AWS Bedrock','Agents'],
   ['Vertex AI','Model\nGarden'],['Vertex AI','Gemini\nAPI'],['Vertex AI','Evaluation'],['Vertex AI','Fine-tuning'],
+  ['AWS\nAgentCore','AgentCore\nGateway'],['AgentCore\nGateway','MCP Server'],['AWS Bedrock','AWS\nAgentCore'],
+  ['Gemini\nAgent Platform','ADK'],['Gemini\nAgent Platform','A2A'],['ADK','MCP Server'],
+  ['Microsoft\nAI Agents','Semantic\nKernel'],['Semantic\nKernel','MCP Plugin'],['MCP Plugin','MCP Server'],
+  ['Palantir\nFoundry','Ontology'],['Ontology','Object Type'],['Ontology','Link Type'],
   // Cross-platform connections (via LangChain integrations)
   ['LangChain','OpenAI API'],['LangChain','Anthropic\nSDK'],['LangGraph','LangChain'],
   ['AWS Bedrock','Embeddings'],['Vertex AI','Datasets'],
@@ -327,7 +355,7 @@ function resize(){
 
 NS.forEach((n,i)=>{
   const angle=(i/NS.length)*Math.PI*2;
-  const isHub=['LangChain','LangGraph','OpenAI API','Anthropic\nSDK','HuggingFace','AWS Bedrock','Vertex AI'].includes(n.id);
+  const isHub=['LangChain','LangGraph','OpenAI API','Anthropic\nSDK','Hugging\nFace','AWS Bedrock','Vertex AI','AWS\nAgentCore','Gemini\nAgent Platform','Microsoft\nAI Agents','Palantir\nFoundry'].includes(n.id);
   const layerR=isHub?140:210;
   n.x=(W/2||430)+layerR*Math.cos(angle)*(0.7+Math.random()*0.5);
   n.y=(H/2||190)+layerR*Math.sin(angle)*(0.7+Math.random()*0.5);
@@ -366,7 +394,7 @@ function tick(){
 resize();
 NS.forEach((n,i)=>{
   const angle=(i/NS.length)*Math.PI*2;
-  const isHub=['LangChain','LangGraph','OpenAI API','Anthropic\nSDK','HuggingFace','AWS Bedrock','Vertex AI'].includes(n.id);
+  const isHub=['LangChain','LangGraph','OpenAI API','Anthropic\nSDK','Hugging\nFace','AWS Bedrock','Vertex AI','AWS\nAgentCore','Gemini\nAgent Platform','Microsoft\nAI Agents','Palantir\nFoundry'].includes(n.id);
   const r=isHub?160:240;
   n.x=(W||860)/2+r*Math.cos(angle)*(0.8+Math.random()*0.4);
   n.y=(H||380)/2+r*Math.sin(angle)*(0.8+Math.random()*0.4);

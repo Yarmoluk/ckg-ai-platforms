@@ -1,18 +1,18 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.Yarmoluk/ckg-ai-platforms",
-  "title": "AI Platforms CKG",
-  "description": "LangChain, LangGraph, OpenAI, Anthropic, HuggingFace, AWS Bedrock, and Vertex AI as traversable knowledge graphs — 7 domains, 314 nodes, 445 edges. 11× fewer tokens than RAG.",
+  "title": "AI Platform Atlas CKG",
+  "description": "Source-pinned CKG atlas for AI developer and agent platforms: LangChain, LangGraph, OpenAI, Anthropic, Hugging Face, AWS Bedrock, AWS AgentCore, Google Vertex/Gemini, Microsoft AI agents, and Palantir Foundry. 11 domains, 475 nodes, 550 typed CSV edges.",
   "repository": {
     "url": "https://github.com/Yarmoluk/ckg-ai-platforms",
     "source": "github"
   },
-  "version": "0.2.3",
+  "version": "0.3.0",
   "packages": [
     {
       "registryType": "pypi",
       "identifier": "ckg-ai-platforms",
-      "version": "0.2.3",
+      "version": "0.3.0",
       "transport": {
         "type": "stdio"
       },

@@ -1,15 +1,15 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling<1.32"]
 build-backend = "hatchling.build"
 
 [project]
 name = "ckg-ai-platforms"
-version = "0.2.3"
-description = "AI developer platforms as traversable knowledge graphs — LangChain, LangGraph, OpenAI, Anthropic, HuggingFace, AWS Bedrock, Vertex AI — MCP-native"
+version = "0.3.0"
+description = "AI developer and agent platforms as source-pinned traversable knowledge graphs - MCP-native"
 readme = "README.md"
 license = { text = "MIT" }
 authors = [{ name = "Daniel Yarmoluk", email = "daniel.yarmoluk@gmail.com" }]
-keywords = ["langchain", "openai", "anthropic", "knowledge-graph", "mcp", "ai-agents", "huggingface", "bedrock", "vertex-ai"]
+keywords = ["langchain", "openai", "anthropic", "knowledge-graph", "mcp", "ai-agents", "huggingface", "bedrock", "vertex-ai", "palantir", "semantic-kernel"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -20,7 +20,7 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 requires-python = ">=3.11"
-dependencies = ["mcp[cli]>=1.0.0"]
+dependencies = ["mcp[cli]>=2.2.0,<3"]
 
 [project.scripts]
 ckg-ai-platforms = "ckg_ai_platforms.server:main"
